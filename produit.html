@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail du Produit</title>
+    <link rel="stylesheet" href="pour le produit.css">
+</head>
+<body>
+
+    <header>
+
+        <nav>
+            <a href="page d'accueil.html">Accueil</a>
+            <a href="boutique.html">Boutique</a>
+            <a href="À propos">À propos</a>
+            <a href="Contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="produit-detail">
+        
+            <img id="product-image" src="" alt="Produit">
+        <div class="info">
+            <h1 id="product-name"></h1>
+            <p>Description détaillée du produit.</p>
+            <p class="prix">Prix unitaire : <span id="product-price"></span>€</p>
+
+            <!-- Sélection de quantité -->
+            <label for="quantity">Quantité :</label>
+            <input type="number" id="quantity" value="1" min="1">
+
+            <!-- Affichage du prix total -->
+            <p class="prix-total">Prix total : <span id="total-price"></span>€</p>
+
+            <button onclick="payer()">Ajouter au panier</button>
+        </div>
+        </div>
+    </section>
+
+    <script>
+        // Fonction pour récupérer les paramètres de l'URL
+        function getQueryParams() {
+            let params = new URLSearchParams(window.location.search);
+            return {
+                nom: params.get("nom") || "Produit inconnu",
+                prix: params.get("prix") || "€",
+                image: params.get("image") || "default.jpg"
+            };
+        }
+
+        // Charger les infos du produit
+        window.onload = function() {
+            let produit = getQueryParams();
+            document.getElementById("product-name").innerText = produit.nom;
+            document.getElementById("product-price").innerText = produit.prix + "€";
+            document.getElementById("product-image").src = produit.image;
+        };
+
+        function payer() {
+            alert("Redirection vers le paiement...");
+            window.location.href = "paiement.html";
+        }
+        function getQueryParams() {
+            let params = new URLSearchParams(window.location.search);
+            return {
+                nom: params.get("nom") || "Produit inconnu",
+                prix: parseFloat(params.get("prix")) || 0.00,
+                image: params.get("image") || "default.jpg"
+            };
+        }
+
+        window.onload = function() {
+            let produit = getQueryParams();
+            document.getElementById("product-name").innerText = produit.nom;
+            document.getElementById("product-price").innerText = produit.prix.toFixed(2);
+            document.getElementById("product-image").src = produit.image;
+
+            let imageElement = document.getElementById("product-image");
+            imageElement.onerror = function() {
+                console.error("L'image ne peut pas être chargée :", produit.image);
+                imageElement.src = "default.jpg";
+            };
+
+            // Mise à jour du prix total dès le chargement
+            updateTotalPrice(produit.prix);
+        };
+
+        function updateTotalPrice(prixUnitaire) {
+            let quantite = document.getElementById("quantity").value;
+            let total = prixUnitaire * quantite;
+            document.getElementById("total-price").innerText = total.toFixed(2);
+        }
+
+        // Mettre à jour le prix total quand la quantité change
+        document.getElementById("quantity").addEventListener("input", function() {
+            let produit = getQueryParams();
+            updateTotalPrice(produit.prix);
+        });
+
+        function ajouterAuPanier() {
+            let produit = getQueryParams();
+            let quantite = document.getElementById("quantity").value;
+            let total = produit.prix * quantite;
+
+            alert("Ajouté au panier : " + quantite + "x " + produit.nom + " pour " + total.toFixed(2) + "€");
+        }
+    </script>
+
+</body>
+</html>

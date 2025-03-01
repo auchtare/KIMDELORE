@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon E-commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- En-tête -->
+    <header>
+        <div class="logo"><img src="ivan.jpg" alt=""></div>
+        <input type="text" id="search" placeholder="Rechercher un produit..." onkeyup="searchProducts()">
+        <nav>
+            <a href="page d'accueil.html">Accueil</a>
+            <a href="boutique.html">Boutique</a>
+            <a href="À propos">À propos</a>
+            <a href="Contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Section Produits -->
+    <section class="produits">
+        <h2>Nos Produits</h2>
+        <div class="grid" id="product-list">
+            <div class="produit" data-name="Produit 1">
+                <img src="messene.jpg" alt="">
+                <h3>Produit 1</h3>
+                <p>19.99€</p>
+                <a href="produit.html?nom=Produit1&prix=19.99&image=messene.jpg" class="btn">Voir</a>
+            </div>
+            <div class="produit" data-name="Produit 2">
+                <img src="jules.jpg" alt="Produit 2">
+                <h3>Produit 2</h3>
+                <p>29.99€</p>
+                <a href="produit.html?nom=Produit2&prix=29.99&image=jules.jpg" class="btn">Voir</a>
+            </div>
+            <div class="produit" data-name="Produit 3">
+                <img src="ismael.jpg" alt="Produit 3">
+                <h3>Produit 3</h3>
+                <p>39.99€</p>
+                <a href="produit.html?nom=Produit1&prix=19.99&image=produit1.jpg" class="btn">Voir</a>
+            </div>
+            <div class="produit" data-name="Produit 3">
+                <img src="diomande.jpg" alt="Produit 3">
+                <h3>Produit 3</h3>
+                <p>39.99€</p>
+                <a href="produit.html?nom=Produit1&prix=19.99&image=produit1.jpg" class="btn">Voir</a>
+            </div>
+            <div class="produit" data-name="Produit 3">
+                <img src="aissa.jpg" alt="Produit 3">
+                <h3>Produit 3</h3>
+                <p>39.99€</p>
+                <a href="produit.html?nom=Produit1&prix=19.99&image=produit1.jpg" class="btn">Voir</a>
+            </div>
+            <div class="produit" data-name="Produit 3">
+                <img src="zine.jpg" alt="Produit 3">
+                <h3>Produit 3</h3>
+                <p>39.99€</p>
+                <a href="produit.html?nom=Produit1&prix=19.99&image=produit1.jpg" class="btn">Voir</a>
+            </div>
+            <div class="produit" data-name="Produit 3">
+                <img src="" alt="Produit 3">
+                <h3>Produit 3</h3>
+                <p>39.99€</p>
+                <a href="produit.html?nom=Produit1&prix=19.99&image=produit1.jpg" class="btn">Voir</a>
+            </div>
+            <div class="produit" data-name="Produit 3">
+                <img src="" alt="Produit 3">
+                <h3>Produit 3</h3>
+                <p>39.99€</p>
+                <a href="produit.html?nom=Produit1&prix=19.99&image=produit1.jpg" class="btn">Voir</a>
+            </div>
+            <div class="produit" data-name="Produit 3">
+                <img src="" alt="Produit 3">
+                <h3>Produit 3</h3>
+                <p>39.99€</p>
+                <a href="produit.html?nom=Produit1&prix=19.99&image=produit1.jpg" class="btn">Voir</a>
+            </div>
+            <div class="produit" data-name="Produit 3">
+                <img src="" alt="Produit 3">
+                <h3>Produit 3</h3>
+                <p>39.99€</p>
+                <a href="produit.html?nom=Produit1&prix=19.99&image=produit1.jpg" class="btn">Voir</a>
+            </div>
+            <div class="produit" data-name="Produit 3">
+                <img src="" alt="Produit 3">
+                <h3>Produit 3</h3>
+                <p>39.99€</p>
+                <a href="produit.html?nom=Produit1&prix=19.99&image=produit1.jpg" class="btn">Voir</a>
+            </div>
+            <div class="produit" data-name="Produit 3">
+                <img src="" alt="Produit 3">
+                <h3>Produit 3</h3>
+                <p>39.99€</p>
+                <a href="produit.html?nom=Produit1&prix=19.99&image=produit1.jpg" class="btn">Voir</a>
+            </div>
+            <div class="produit" data-name="Produit 3">
+                <img src="" alt="Produit 3">
+                <h3>Produit 3</h3>
+                <p>39.99€</p>
+                <a href="produit.html?nom=Produit1&prix=19.99&image=produit1.jpg" class="btn">Voir</a>
+            </div>
+            <div class="produit" data-name="Produit 3">
+                <img src="" alt="Produit 3">
+                <h3>Produit 3</h3>
+                <p>39.99€</p>
+                <a href="produit.html?nom=Produit1&prix=19.99&image=produit1.jpg" class="btn">Voir</a>
+            </div>
+            <div class="produit" data-name="Produit 3">
+                <img src="" alt="Produit 3">
+                <h3>Produit 3</h3>
+                <p>39.99€</p>
+                <a href="produit.html?nom=Produit1&prix=19.99&image=produit1.jpg" class="btn">Voir</a>
+            </div>
+            
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
